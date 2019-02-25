@@ -1,4 +1,11 @@
 #!bin/bash
+#Title........: Live-Persistence.sh
+#Description..: This is a bash script for making a persistent USB.
+#Author.......: KChitnis
+#Date.........: 20190225
+#Version......: v0.1-alpha
+#Usage........: bash Live-Persistence.sh
+#Bash Version.: 4.2 or later
 lsblk
 echo "Type the partition [eg.sdxx]:"
 read p
@@ -16,5 +23,4 @@ read d
 mkdir -p /mnt/$d
 /dev/$p /mnt/$d
 echo "/ union" > /mnt/$d/persistence.conf
-umount /dev/$p
-~           
+umount /dev/$p           
