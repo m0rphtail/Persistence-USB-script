@@ -7,7 +7,7 @@
 #Usage........: bash Live-Persistence.sh
 #Bash Version.: 4.2 or later
 lsblk
-echo "Type the partition [eg.sdxx]:"
+echo "Type the persistence partition name [eg.sdxx]:"
 read p
 while true; do
     read -p "Do you wish to format /dev/$p?" yn
