@@ -7,18 +7,18 @@
 #Usage........: bash Live-Persistence.sh
 #Bash Version.: 4.2 or later
 lsblk
-echo "Type the persistence partition name [eg.sdxx]:"
+tput setaf 2; echo "Type the persistence partition name [eg.sdxx]:"
 read p
 while true; do
-    read -p "Do you wish to format /dev/$p?" yn
+   tput setaf 1; read -p "Do you wish to format /dev/$p?" yn
     case $yn in
         [Yy]* ) mkfs.ext3 -L persistence /dev/$p
                 e2label /dev/$p persistence; break;;
         [Nn]* ) exit;;
-        * ) echo "Please answer yes or no.";;
+        * ) tput setaf 1; echo "Please answer yes or no.";;
     esac
 done
-echo "Enter the name of the directory you want:"
+tput setaf 2; echo "Enter the name of the directory you want:"
 read d
 mkdir -p /mnt/$d
 /dev/$p /mnt/$d
