@@ -21,6 +21,6 @@ done
 tput setaf 2; echo "Enter the name of the directory you want:"
 read d
 mkdir -p /mnt/$d
-/dev/$p /mnt/$d
+mount /dev/$p /mnt/$d
 echo "/ union" > /mnt/$d/persistence.conf
 umount /dev/$p           
