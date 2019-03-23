@@ -9,6 +9,7 @@
 lsblk
 tput setaf 2; echo "Type the persistence partition name [eg.sdxx]:"
 read p
+tput setaf 2; umount /dev/$p
 while true; do
    tput setaf 1; read -p "Do you wish to format /dev/$p?" yn
     case $yn in
